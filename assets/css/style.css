@@ -378,25 +378,47 @@ img{max-width:100%; display:block}
   flex-direction:column;
   gap:10px;
 }
+/* أزرار عائمة — أيقونة فقط بدون إطار */
+.floating{
+  position:fixed;
+  left:16px;
+  bottom:16px;
+  z-index:80;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
 .fab{
-  width:54px;
-  height:54px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:rgba(15,22,32,.72);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
+  width:auto;
+  height:auto;
+  border:none;        /* شيلنا البوردر */
+  background:none;     /* شيلنا الخلفية */
+  box-shadow:none;     /* شيلنا الظل */
   display:grid;
   place-items:center;
   cursor:pointer;
   transition:.2s;
 }
+
+/* تكبير الأيقونات */
+.fab img{
+  width:50px;   /* كبرنا الأيقونة */
+  height:50px;
+  transition:.2s;
+}
+
+/* تأثير خفيف عند الهوفر */
+.fab:hover img{
+  transform:scale(1.08);
+}
+
 .fab:hover{
   transform:translateY(-2px);
   border-color:rgba(214,181,106,.35);
   background:rgba(214,181,106,.10);
 }
-.fab img{width:26px;height:26px}
+/* .fab img{width:26px;height:26px} */
 
 /* ========= Reveal animation ========= */
 .reveal{
